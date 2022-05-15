@@ -1,4 +1,4 @@
-//Copyright by Enigma
+//Copyright by PanasyukMaria
 
 #include <gtest/gtest.h>
 #include "Stack.hpp"
@@ -7,7 +7,7 @@
 TEST(Example, EmptyTest) {
   EXPECT_TRUE(true);
 }
-TEST(First, True) {
+TEST(StackOne, True) {
   Stack<int> MySteck;
   int t=2;
   MySteck.push(1);
@@ -52,22 +52,22 @@ class Myclass {
   double t1;
   std::string t2;
 };
-TEST(Second, True) {
-  StackTwo<Myclass> MySteck;
+TEST(Stacktwo, True) {
+  SecondStack<Myclass> MyStack;
   int t0 = 2;
   double t1 = 2.2;
   std::string t2 = "2";
-  MySteck.push_emplace(Myclass(1, 1.1, "12"));
-  MySteck.push_emplace(t0, t1, t2);
-  MySteck.push(Myclass());
-  EXPECT_EQ(MySteck.pop().t2, "0");
-  EXPECT_EQ(MySteck.head().t0, 2);
-  EXPECT_EQ(MySteck.pop().t1, 2.2);
-  EXPECT_EQ(MySteck.head().t0, 1);
-  EXPECT_EQ(MySteck.pop().t2, "12");
+  MyStack.push_emplace(Myclass(1, 1.1, "12"));
+  MyStack.push_emplace(t0, t1, t2);
+  MyStack.push(Myclass());
+  EXPECT_EQ(MyStack.pop().t2, "0");
+  EXPECT_EQ(MyStack.head().t0, 2);
+  EXPECT_EQ(MyStack.pop().t1, 2.2);
+  EXPECT_EQ(MyStack.head().t0, 1);
+  EXPECT_EQ(MyStack.pop().t2, "12");
   std::string err = "Stack is empty";
   try {
-    MySteck.pop();
+    MyStack.pop();
   }
   catch (std::runtime_error& error) {
     EXPECT_EQ(error.what(), err);

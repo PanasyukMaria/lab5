@@ -1,4 +1,4 @@
-//Copyright by Enigma
+//Copyright by PanasyukMaria
 
 #ifndef INCLUDE_STACKSECOND_HPP_
 #define INCLUDE_STACKSECOND_HPP_
@@ -8,13 +8,14 @@
 
 
 template <typename T>
-class StackTwo
+class SecondStack
 {
  public:
-  StackTwo(const StackTwo&) = delete;
-  StackTwo& operator = (const StackTwo&) = delete;
-  StackTwo(): ref(nullptr) {}
-  ~StackTwo(){
+  SecondStack(const SecondStack&) = delete;
+  SecondStack& operator = (const SecondStack&) = delete;
+  SecondStack(): ref(nullptr) {}
+
+  ~SecondStack() {
     while (ref) {
       pop();
     }
