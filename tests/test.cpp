@@ -54,15 +54,15 @@ class Myclass {
 };
 TEST(Stacktwo, True) {
   SecondStack<Myclass> MyStack;
-  int t0 = 2;
-  double t1 = 2.2;
-  std::string t2 = "2";
+  int t0 = 5;
+  double t1 = 5.5;
+  std::string t2 = "5";
   MyStack.push_emplace(Myclass(1, 1.1, "12"));
   MyStack.push_emplace(t0, t1, t2);
   MyStack.push(Myclass());
   EXPECT_EQ(MyStack.pop().t2, "0");
-  EXPECT_EQ(MyStack.head().t0, 2);
-  EXPECT_EQ(MyStack.pop().t1, 2.2);
+  EXPECT_EQ(MyStack.head().t0, 5);
+  EXPECT_EQ(MyStack.pop().t1, 5.5);
   EXPECT_EQ(MyStack.head().t0, 1);
   EXPECT_EQ(MyStack.pop().t2, "12");
   std::string err = "Stack is empty";
