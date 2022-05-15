@@ -14,13 +14,13 @@ class Stack
   Stack& operator = (const Stack&) = delete;
   Stack(): ref(nullptr) {}
 
-  void push(const T& value) {
-    auto mv = std::unique_ptr<StackObj>(new StackObj(std::move(ref), (value)));
-    ref = std::move(mv);
-  }
   void push(T&& value) {
     auto mv = std::unique_ptr<StackObj>(new StackObj(std::move(ref),
-                                                        std::move(value)));
+                                                     std::move(value)));
+    ref = std::move(mv);
+  }
+  void push(const T& value) {
+    auto mv = std::unique_ptr<StackObj>(new StackObj(std::move(ref), (value)));
     ref = std::move(mv);
   }
 
