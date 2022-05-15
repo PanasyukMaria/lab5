@@ -44,7 +44,8 @@ class SecondStack
   struct StackObj{
     std::unique_ptr<StackObj> last;
     T val;
-    explicit StackObj(std::unique_ptr<StackObj> ref = nullptr, T&& vaalue = T()) {
+    explicit StackObj(std::unique_ptr<StackObj> ref = nullptr,
+                                      T&& vaalue = T()) {
       val = std::forward<T>(vaalue);
       last = std::move(ref);
     }
